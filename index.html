@@ -278,7 +278,7 @@ Figure 2 (Fisher S., 2019)
     const Analysis3Count = displayWordCount("Analysis3_InText");
     const ConclusionCount = displayWordCount("Conclusion_InText");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + AnalysisCount + Analysis1Count + Analysis2Count + Analysis3Count + ConclusionCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
