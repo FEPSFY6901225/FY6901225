@@ -88,7 +88,7 @@
 <hr>
   <h3 id="Introduction">Introduction</h3>   
     <p class="ex1">
-      <pre>
+      <pre id="Introduction_InText">
         First past the post systems are one of the oldest electoral systems and these systems are still used in over 40 countries across the 
         world and yet it’s arguably impossible to achieve democracy using such an electoral system (Blais, 2008), (Veritasium, 2024, 1:13). 
         The UK can best be described as a constitutional monarchy (Tilly, 2007) and uses a first past the post voting system to elect members
@@ -105,23 +105,23 @@
 <hr>    
      <h3 id="Analysis and Discussion">Analysis and Discussion</h3>
 <img src="Picture 1.png" alt="Banner" Width="300" Height="200">
-  <p>
+
     <pre>
-  Figure 1 (Chu B. 2024)
+Figure 1 (Chu B. 2024)
     </pre>
-</p>
-  <p class="ex1">
+
+  <p class="ex1" id="Analysis_InText">
       <pre>
         First past the post systems can lead to undemocratic outcomes. As demonstrated in Figure 1, there can be large percentage point gaps in 
         the share of the total popular vote and the share of the seats gained in UK general elections, reaching a 30% gap in 2024(Chu, 2024). 
         Logically, the share of seats in parliament should be correlational to the share of the popular vote. 
       </pre>
 <img src="Picture 2.jpg" alt="Banner" width="300" height="200">
-  <p>
+  
   <pre>
 Figure 2 (Fisher S., 2019)
   </pre>
-</p>
+
   
       <pre>
         Another issue that affects the democracy of British elections is tactical voting (Johnston R.& Pattie C., 2011). Tactical voting is a 
@@ -157,7 +157,7 @@ Figure 2 (Fisher S., 2019)
 <hr>
  <h3 id="Conclusion">Conclusion</h3>
 <p>
-  <pre>
+  <pre id="Conclusion_InText">
        This paper has examined the potential benefits of incorporating principles from Condorcet’s proposed electoral system on improving and 
        attaining democracy in the UK. While it is not suitable to incorporate the entire system, there are clear positives to Condorcet’s system 
        over the current electoral system, particularly in improving the electorate’s ability to vote according to their actual preferences rather 
@@ -250,6 +250,39 @@ Figure 2 (Fisher S., 2019)
     window.onload = getLastUpdatedTime;
 </script>
 
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + AnalysisCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+  
        
 </body>       
   </html>
